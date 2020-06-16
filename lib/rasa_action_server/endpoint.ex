@@ -30,10 +30,10 @@ defmodule RasaActionServer.Endpoint do
   end
 
 
-  forward("/bot", to: Router)
-  match _ do
-    send_resp(conn, 404, "This URL is not setup for response")
-  end
+  forward("/", to: Router)
+#  match _ do
+#    send_resp(conn, 404, "This URL is not setup for response")
+#  end
 #  match _ do
 #    conn
 #    |> put_resp_header("location", redirect_url())

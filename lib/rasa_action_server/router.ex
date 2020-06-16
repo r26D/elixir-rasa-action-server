@@ -12,7 +12,14 @@ defmodule RasaActionServer.Router do
     |> put_resp_content_type(@content_type)
     |> send_resp(200, message())
   end
+  post "/webhook" do
+    IO.inspect(conn.params)
+    conn
+    |> put_resp_content_type(@content_type)
+    |> send_resp(200, message())
+  end
   post "/rasa_action_server" do
+    IO.inspect(conn.params)
     conn
     |> put_resp_content_type(@content_type)
     |> send_resp(200, message())
