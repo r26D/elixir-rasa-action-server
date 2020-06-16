@@ -30,6 +30,7 @@ defmodule RasaActionServer.Endpoint do
   end
 
 
+  forward("/webhook", to: RasaSdk.Actions.Plug)
   forward("/", to: Router)
 #  match _ do
 #    send_resp(conn, 404, "This URL is not setup for response")

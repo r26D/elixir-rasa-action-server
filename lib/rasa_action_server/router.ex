@@ -12,18 +12,13 @@ defmodule RasaActionServer.Router do
     |> put_resp_content_type(@content_type)
     |> send_resp(200, message())
   end
-  post "/webhook" do
-    IO.inspect(conn.params)
-    conn
-    |> put_resp_content_type(@content_type)
-    |> send_resp(200, message())
-  end
-  post "/rasa_action_server" do
-    IO.inspect(conn.params)
-    conn
-    |> put_resp_content_type(@content_type)
-    |> send_resp(200, message())
-  end
+#  post "/webhook" do
+#    IO.inspect(conn.params)
+#    conn
+#    |> put_resp_content_type(@content_type)
+#    |> send_resp(200, message())
+#  end
+
   match _ do
     send_resp(conn, 404, "Requested page not found!")
   end
@@ -31,7 +26,7 @@ defmodule RasaActionServer.Router do
   defp message do
     Jason.encode!(%{
 
-      text: "This is a Rasa Action Server - your endpoint is  /rasa_action_server"
+      text: "This is a Rasa Action Server - your endpoint is  /webhook"
     })
   end
 end

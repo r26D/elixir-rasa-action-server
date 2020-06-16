@@ -16,6 +16,11 @@ The description of how to serve requests for Rasa is [here ](https://rasa.com/do
 [And this one](https://dev.to/jonlunsford/elixir-building-a-small-json-endpoint-with-plug-cowboy-and-poison-1826)
 
 
+## Working Example
+
+The code from the HelpAssistant Example from Rasa HQ has been ported
+to work with this server. **The ServiceNow API has not been ported**. THis
+was mostly to validate how to work with the Rasa API from Elixir.
 
 
 
