@@ -7,6 +7,10 @@ David White built an openapi version of the protocl (https://github.com/whitedr/
 
 This project will be a simple server that runs the sdk
 
+There is also support for the NLG/Utter API. So both custom forms and responses can be handled in 
+elixir instead of Python.
+
+
 The description of how to serve requests for Rasa is [here ](https://rasa.com/docs/rasa/api/action-server/#action-server)
 
 [The OpenAPI specification ](https://rasa.com/docs/rasa/_static/spec/action-server.yml)
