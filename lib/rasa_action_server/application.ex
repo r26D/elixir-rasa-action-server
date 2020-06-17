@@ -15,6 +15,7 @@ defmodule RasaActionServer.Application do
     ]
     Logger.info("Starting server at http://localhost:#{port()}/")
     register_all_actions()
+    register_all_responses()
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: RasaActionServer.Supervisor]
@@ -22,6 +23,10 @@ defmodule RasaActionServer.Application do
   end
   defp register_all_actions do
     RasaSdk.Actions.Registry.register_actions(HelpdeskAssistant.actions())
+
+  end
+  defp register_all_responses do
+    RasaNLG.Responses.Registry.register_responses(HelpdeskAssistant.responses())
 
   end
   defp port(), do: Application.get_env(:rasa_action_server, :port)

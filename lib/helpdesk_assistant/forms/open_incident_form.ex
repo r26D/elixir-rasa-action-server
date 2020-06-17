@@ -1,4 +1,4 @@
-defmodule HelpdeskAssistant.OpenIncidentForm do
+defmodule HelpdeskAssistant.Forms.OpenIncidentForm do
   alias RasaSdk.Actions.{
     Context,
     Events,
@@ -26,7 +26,7 @@ defmodule HelpdeskAssistant.OpenIncidentForm do
         from_trigger_intent("Problem resetting password", [intent: "password_reset"]),
         from_trigger_intent("Problem with email", [intent: "problem_email"]),
         from_text([intent: ["password_reset", "problem_email", "inform"]]),
-      from_text()
+        from_text()
       ]
     }
 

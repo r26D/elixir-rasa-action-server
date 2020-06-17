@@ -29,7 +29,7 @@ defmodule RasaActionServer.Endpoint do
     send_resp(conn, 200, "pong!")
   end
 
-
+  forward("/nlg", to: RasaNLG.Responses.Plug)
   forward("/webhook", to: RasaSdk.Actions.Plug)
   forward("/", to: Router)
 #  match _ do

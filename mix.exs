@@ -26,12 +26,14 @@ defmodule RasaActionServer.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
+
       {:rasa_sdk, git: "https://github.com/r26D/rasa-sdk-elixir.git"},
-    #  {:rasa_sdk, path: "../rasa-sdk-elixir"},
+      {:rasa_nlg, git: "https://github.com/r26D/rasa-nlg-elixir.git"},
+      {:tesla, "~> 1.3"},
+      {:poison, "~> 3.1"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.0"},
-        {:remix, "~> 0.0.1", only: :dev},
+      {:remix, "~> 0.0.1", only: :dev},
       {:credo, "~> 0.10", except: :prod, runtime: false}
     ]
   end
