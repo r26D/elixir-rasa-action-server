@@ -29,8 +29,8 @@ defmodule RasaActionServer.Endpoint do
     send_resp(conn, 200, "pong!")
   end
 
-  forward("/nlg", to: RasaNLG.Responses.Plug)
-  forward("/webhook", to: RasaSdk.Actions.Plug)
+  forward("/helpdesk-assistant/nlg", to: RasaNLG.Responses.Plug, prefix: "helpdesk_assistant")
+  forward("/helpdesk-assistant/actions", to: RasaSdk.Actions.Plug, prefix: "helpdesk_assistant")
   forward("/", to: Router)
 #  match _ do
 #    send_resp(conn, 404, "This URL is not setup for response")

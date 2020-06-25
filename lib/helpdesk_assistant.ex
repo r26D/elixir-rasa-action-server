@@ -4,12 +4,20 @@ defmodule HelpdeskAssistant do
 
   def actions do
     {:ok, modules} = :application.get_key(Application.get_application(__MODULE__), :modules)
-    modules |> Enum.filter(& String.starts_with?(Atom.to_string(&1), "#{__MODULE__}.Forms."))
+    {
+      :helpdesk_assistant,
+      modules
+      |> Enum.filter(&String.starts_with?(Atom.to_string(&1), "#{__MODULE__}.Forms."))
+    }
   end
 
   def responses do
-   {:ok, modules} = :application.get_key(Application.get_application(__MODULE__), :modules)
-   modules |> Enum.filter(& String.starts_with?(Atom.to_string(&1), "#{__MODULE__}.Responses."))
+    {:ok, modules} = :application.get_key(Application.get_application(__MODULE__), :modules)
+    {
+      :helpdesk_assistant,
+      modules
+      |> Enum.filter(&String.starts_with?(Atom.to_string(&1), "#{__MODULE__}.Responses."))
+    }
   end
 
 
