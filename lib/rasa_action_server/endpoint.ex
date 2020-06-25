@@ -29,6 +29,7 @@ defmodule RasaActionServer.Endpoint do
     send_resp(conn, 200, "pong!")
   end
 
+  forward("/helpdesk-assistant/nlg/responses", to: RasaNLG.Responses.Index, prefix: "helpdesk_assistant")
   forward("/helpdesk-assistant/nlg", to: RasaNLG.Responses.Plug, prefix: "helpdesk_assistant")
   forward("/helpdesk-assistant/actions", to: RasaSdk.Actions.Plug, prefix: "helpdesk_assistant")
   forward("/", to: Router)
