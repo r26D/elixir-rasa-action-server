@@ -28,10 +28,10 @@ defmodule RasaActionServer.Endpoint do
   get "/ping" do
     send_resp(conn, 200, "pong!")
   end
-
-  forward("/helpdesk-assistant/nlg/responses", to: RasaNLG.Responses.Index, prefix: "helpdesk_assistant")
-  forward("/helpdesk-assistant/nlg", to: RasaNLG.Responses.Plug, prefix: "helpdesk_assistant")
-  forward("/helpdesk-assistant/actions", to: RasaSdk.Actions.Plug, prefix: "helpdesk_assistant")
+  forward("/helpdesk-assistant/callback", to: RasaSDK.Callbacks.Plug, handler_module: HelpdeskAssistant.CallbackHandler)
+  forward("/helpdesk-assistant/nlg/responses", to: RasaSDK.Responses.Index, prefix: "helpdesk_assistant")
+  forward("/helpdesk-assistant/nlg", to: RasaSDK.Responses.Plug, prefix: "helpdesk_assistant")
+  forward("/helpdesk-assistant/actions", to: RasaSDK.Actions.Plug, prefix: "helpdesk_assistant")
   forward("/", to: Router)
 #  match _ do
 #    send_resp(conn, 404, "This URL is not setup for response")

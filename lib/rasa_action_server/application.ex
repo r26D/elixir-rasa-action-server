@@ -22,11 +22,11 @@ defmodule RasaActionServer.Application do
     Supervisor.start_link(children, opts)
   end
   defp register_all_actions do
-    RasaSdk.Actions.Registry.register_actions(HelpdeskAssistant.actions())
+    RasaSDK.Actions.Registry.register_actions(HelpdeskAssistant.actions())
 
   end
   defp register_all_responses do
-    RasaNLG.Responses.Registry.register_responses(HelpdeskAssistant.responses())
+    RasaSDK.Responses.Registry.register_responses(HelpdeskAssistant.responses())
 
   end
   defp port(), do: Application.get_env(:rasa_action_server, :port)

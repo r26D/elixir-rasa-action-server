@@ -1,13 +1,5 @@
 defmodule HelpdeskAssistant.Responses.UtterIamabot do
-  alias RasaNLG.Responses.{
-    Response,
-    Context
-    }
-  alias RasaNLG.Model.Response, as: ResponseModel
-  use  Response
+  use  RasaSDK.Responses.Response
 
-  def respond(%Context{} = context) do
-    context
-    |> set_response(%ResponseModel{text: "I am a bot, powered by Rasa."})
-  end
+  def simple_text(), do:  "I am a bot, powered by Rasa."
 end

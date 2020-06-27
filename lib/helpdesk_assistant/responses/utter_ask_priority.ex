@@ -1,10 +1,10 @@
 defmodule HelpdeskAssistant.Responses.UtterAskPriority do
-  alias RasaNLG.Responses.{
+  alias RasaSDK.Responses.{
     Response,
     Context
     }
-  alias RasaNLG.Model.Response, as: ResponseModel
-  alias RasaNLG.Model.Button
+  alias RasaSDK.Model.NLGResponse
+  alias RasaSDK.Model.Button
   use  Response
 
   def respond(%Context{} = context) do
@@ -14,6 +14,6 @@ defmodule HelpdeskAssistant.Responses.UtterAskPriority do
       %Button{title: "high", payload: "/inform{\"priority\":\"high\"}"}
     ]
     context
-    |> set_response(%ResponseModel{text: "What is the priority of this issue?", buttons: buttons})
+    |> set_response(%NLGResponse{text: "What is the priority of this issue?", buttons: buttons})
   end
 end

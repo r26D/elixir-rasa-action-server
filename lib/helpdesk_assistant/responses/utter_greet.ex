@@ -1,13 +1,5 @@
 defmodule HelpdeskAssistant.Responses.UtterGreet do
-  alias RasaNLG.Responses.{
-    Response,
-    Context
-    }
-    alias RasaNLG.Model.Response, as: ResponseModel
-  use  Response
+  use  RasaSDK.Responses.Response
+  def simple_text(), do: "Hello"
 
-  def respond(%Context{} = context) do
-    context
-    |> set_response(%ResponseModel{text: "Hello"})
-  end
 end

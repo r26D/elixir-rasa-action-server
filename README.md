@@ -1,14 +1,15 @@
 # RasaActionServer
 
-The [Rasa framework ](https://rasa.com) is built in Python. Custom actions for the chat system
-can be built in any language as long as there is an action server in that language.
+The [Rasa framework ](https://rasa.com) is built in Python.
 
-David White built an openapi version of the protocl (https://github.com/whitedr/rasa-sdk-elixir)
+This is a simple app that shows how to use the elixir [rasa-sdk](https://github.com/r26D/rasa-sdk-elixir).
 
-This project will be a simple server that runs the sdk
+It demonstrates:
+* Forms
+* NLG - utterance generation
+* Namespaced bots - allowing multiple bots to talk to a single server
+* Callback request processing
 
-There is also support for the NLG/Utter API. So both custom forms and responses can be handled in 
-elixir instead of Python.
 
 
 The description of how to serve requests for Rasa is [here ](https://rasa.com/docs/rasa/api/action-server/#action-server)
@@ -26,6 +27,8 @@ The code from the HelpAssistant Example from Rasa HQ has been ported
 to work with this server. **The ServiceNow API has not been ported**. THis
 was mostly to validate how to work with the Rasa API from Elixir.
 
+To make it simple you can check out the fork of [helpdesk-assistant](https://github.com/r26D/helpdesk-assistant)
+and run it along side this app.
 
 
 ## Installation

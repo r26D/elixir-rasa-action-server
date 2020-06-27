@@ -1,12 +1,12 @@
 defmodule HelpdeskAssistant.Forms.OpenIncidentForm do
-  alias RasaSdk.Actions.{
+  alias RasaSDK.Actions.{
     Context,
     Events,
     FormAction
     }
   use  FormAction
 
-  alias RasaSdk.Model.{Request, Tracker}
+  alias RasaSDK.Model.{Request, Tracker}
 
 
   def name(), do: "open_incident_form"
@@ -79,7 +79,7 @@ defmodule HelpdeskAssistant.Forms.OpenIncidentForm do
           email: #{email}
           problem description: #{problem_description}
           title: #{incident_title}
-          email: #{priority}
+          prority: #{priority}
          An incident with the following details would be opened"
     context
     |> utter_message([text: message])

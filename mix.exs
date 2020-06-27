@@ -27,8 +27,7 @@ defmodule RasaActionServer.MixProject do
   defp deps do
     [
 
-      {:rasa_sdk, git: "https://github.com/r26D/rasa-sdk-elixir.git"},
-      {:rasa_nlg, git: "https://github.com/r26D/rasa-nlg-elixir.git"},
+      {:rasa_sdk, "~> 0.5"},
       {:tesla, "~> 1.3"},
       {:poison, "~> 3.1"},
       {:jason, "~> 1.2"},
